@@ -47,8 +47,9 @@ function updateFilters(){
   console.log("=================== function updateFilter Start ============================");
   
     // 4a. Save the element that was changed as a variable.
-      var changeElement = d3.select(this); // This never happens, why?
+    var changeElement = d3.select("input"); // This never happens, why?
     console.log(`var changeElement`,changeElement)
+    console.log(`this`,this)
    
     // 4b. Save the value that was changed as a variable.
     var elementValue = changeElement.property("value"); // This never happens, why?
@@ -69,6 +70,8 @@ function updateFilters(){
     }
 
     console.log(`filters`,filters)
+    console.log(`filters[0]`,filters[0])
+    console.log(`filters[datetime]`,filters[datetime])
   
     // 6. Call function to apply all filters and rebuild the table
     console.log("=================== function updateFilter End ===========================");
@@ -88,9 +91,16 @@ function filterTable(currentFilters){
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
     // Object.entries(filters).forEach(row,[key, value]){
+
+  // The code works if I specifically name #datetime ... now I want to use the key and value for that
+  // var filterKey = currentFilters[0].property("key") 
+  // var keyValue = currentFilters[0].property("value")
+  // currentFilters="1/4/2010", this test works
+  console.log(`currentFilters`,currentFilters)
   console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++")   
         // Grab the datetime value from the filter
-        let date = d3.select("#datetime").property("value");
+        // let date = d3.select("#datetime").property("value");
+        let date = currentFilters;
         // let filteredData = tableData;
       
          // Check to see if a date was entered and filter the
