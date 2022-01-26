@@ -70,8 +70,6 @@ function updateFilters(){
     }
 
     console.log(`filters`,filters)
-    console.log(`filters[0]`,filters[0])
-    console.log(`filters[datetime]`,filters[datetime])
   
     // 6. Call function to apply all filters and rebuild the table
     console.log("=================== function updateFilter End ===========================");
@@ -96,11 +94,19 @@ function filterTable(currentFilters){
   // var filterKey = currentFilters[0].property("key") 
   // var keyValue = currentFilters[0].property("value")
   // currentFilters="1/4/2010", this test works
+  // var obj = { first: 'someVal', second: 'otherVal' };
+  // alert(Object.keys(obj)[0]); // returns first
+  // alert(Object.keys(obj)[1]); // returns second
+
   console.log(`currentFilters`,currentFilters)
+  changedKey = Object.keys(currentFilters)
+  console.log(`changedKey`,changedKey)
   console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++")   
         // Grab the datetime value from the filter
         // let date = d3.select("#datetime").property("value");
-        let date = currentFilters;
+        let date = currentFilters[changedKey];
+
+      console.log(`date`,date)
         // let filteredData = tableData;
       
          // Check to see if a date was entered and filter the
