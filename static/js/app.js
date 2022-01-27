@@ -44,32 +44,41 @@ buildTable(tableData);
 
 // 3. Use this function to update the filters. 
 function updateFilters(id){
-  console.log(`id`,id) // this is perfect
-  var changeElement = {}
-
   console.log("=================== function updateFilter Start ============================");
+
+  console.log(`id`,id) // this is perfect
+  var changedElement = {}
+  let text1 = "#";
+  let text2 = "";
+  let callId = text1.concat(id);
+  callId = callId.concat(text2);
   
+  console.log(`callId`,callId)
+    
     // 4a. Save the element that was changed as a variable.
     //let date = d3.select("#datetime").property("value");
-    changeElement = d3.select("input",id=id);
+    // changedElement = d3.select(callId);
+  // if(callId==="state"){
+  //   changedElement = d3.select(callId);
+  // }
+  // if(callId==="datetime"){
+  //   changedElement = d3.select("datetime");
+  // }
+    changedElement = d3.select(callId) //This is just selecting id = datetime!!!
 
-
-    console.log(`var changeElement`,changeElement)
-
-    console.log(`this`,this)
-
+    console.log(`var changedElement`,changedElement)
 
    
     // 4b. Save the value that was changed as a variable.
-    var elementValue = changeElement.property("value");
+    var elementValue = changedElement.property("value");
 
   
     console.log(`var elementValue`,elementValue)
 
 
     // 4c. Save the id of the filter that was changed as a variable.
-    var filterId = changeElement.property("id");
- 
+    // var filterId = changedElement.property("id");
+    var filterId = id;
     console.log(`var filterId`,filterId)
 
     // 5. If a filter value was entered then add that filterId and value
