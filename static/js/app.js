@@ -5,15 +5,15 @@ const tableData = data;
 // get table references
 var tbody = d3.select("tbody");
 
-console.log(`var tbody`,{tbody});
-
 function buildTable(currentData) {
+
   console.log("=================== function buildTable Start ============================");
+  
   // First, clear out any existing data
 
   tbody.html("");
-  console.log(`tbody.html`,tbody.html)
-  // Next, loop through each object in the data
+
+    // Next, loop through each object in the data
   // and append a row and cells for each value in the row
     currentData.forEach(function(dataRow){
 
@@ -104,34 +104,37 @@ function filterTable(currentFilters){
 
   console.log("=================== function filterTable Start ============================");
 
+    console.log(`currentFilters`,currentFilters)
+
     // 8. Set the filtered data to the tableData.
     let filteredData = tableData;
     
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
 
-  console.log(`currentFilters`,currentFilters)
   changedKey = Object.keys(currentFilters)
   console.log(`changedKey`,changedKey)
-  console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++")   
-        // Grab the datetime value from the filter
-        let date = currentFilters[changedKey];
 
-      console.log(`date`,date)
+  console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++") 
+
+        // Grab the key value from the filter
+        let currentkey = currentFilters[changedKey];
+
+      console.log(`cuurentkey`,currentkey)
         // let filteredData = tableData;
       
-         // Check to see if a date was entered and filter the
-        // data using that date.
-        if (date) {
+         // Check to see if a what was entered and filter the
+        // data using that key.
+        if (currentkey) {
           // Apply `filter` to the table data to only keep the
-          // rows where the `datetime` value matches the filter value
-          filteredData = filteredData.filter(row => row[changedKey] === date);
+          // rows where the `currentkey` value matches the filter value
+          filteredData = filteredData.filter(row => row[changedKey] === currentkey);
         }
       
-         // Rebuild the table using the filtered data
-        // @NOTE: If no date was entered, then filteredData will
+        // Rebuild the table using the filtered data
+        // @NOTE: If no data was entered, then filteredData will
         // just be the original tableData.
-        buildTable(filteredData);
+        
 
   console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++")      
 
@@ -140,7 +143,7 @@ function filterTable(currentFilters){
     // filteredData = filteredData.filter((row) => row[key] === value);
     // }
 
-    // buildTable(filteredData);
+    buildTable(filteredData);
   
   console.log("=================== function filterTable End ==============================");
 }
