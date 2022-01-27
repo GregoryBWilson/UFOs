@@ -43,22 +43,35 @@ buildTable(tableData);
 
 
 // 3. Use this function to update the filters. 
-function updateFilters(){
+function updateFilters(id){
+  console.log(`id`,id) // this is perfect
+  var changeElement = {}
+
   console.log("=================== function updateFilter Start ============================");
   
     // 4a. Save the element that was changed as a variable.
-    var changeElement = d3.select("input"); // This never happens, why?
+    //let date = d3.select("#datetime").property("value");
+    changeElement = d3.select("input",id=id);
+
+
     console.log(`var changeElement`,changeElement)
+
     console.log(`this`,this)
+
+
    
     // 4b. Save the value that was changed as a variable.
-    var elementValue = changeElement.property("value"); // This never happens, why?
+    var elementValue = changeElement.property("value");
+
   
     console.log(`var elementValue`,elementValue)
+
+
     // 4c. Save the id of the filter that was changed as a variable.
-    var filterId = changeElement.property("id"); // This never happens, why?
+    var filterId = changeElement.property("id");
  
     console.log(`var filterId`,filterId)
+
     // 5. If a filter value was entered then add that filterId and value
     // to the filters list. Otherwise, clear that filter from the filters object.
   
@@ -81,29 +94,18 @@ function updateFilters(){
 function filterTable(currentFilters){
 
   console.log("=================== function filterTable Start ============================");
-    var row = tbody.append("tr");
 
     // 8. Set the filtered data to the tableData.
     let filteredData = tableData;
     
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-    // Object.entries(filters).forEach(row,[key, value]){
-
-  // The code works if I specifically name #datetime ... now I want to use the key and value for that
-  // var filterKey = currentFilters[0].property("key") 
-  // var keyValue = currentFilters[0].property("value")
-  // currentFilters="1/4/2010", this test works
-  // var obj = { first: 'someVal', second: 'otherVal' };
-  // alert(Object.keys(obj)[0]); // returns first
-  // alert(Object.keys(obj)[1]); // returns second
 
   console.log(`currentFilters`,currentFilters)
   changedKey = Object.keys(currentFilters)
   console.log(`changedKey`,changedKey)
   console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++")   
         // Grab the datetime value from the filter
-        // let date = d3.select("#datetime").property("value");
         let date = currentFilters[changedKey];
 
       console.log(`date`,date)
@@ -114,7 +116,7 @@ function filterTable(currentFilters){
         if (date) {
           // Apply `filter` to the table data to only keep the
           // rows where the `datetime` value matches the filter value
-          filteredData = filteredData.filter(row => row.datetime === date);
+          filteredData = filteredData.filter(row => row[changedKey] === date);
         }
       
          // Rebuild the table using the filtered data
