@@ -46,15 +46,15 @@
                               Each element should have the same "id" as the object properties in the data.js file. -->
                             <!-- <input type="text" onkeydown="myFunction()"> -->
                             <label for="date">Enter Date</label>
-                            <input type="text" placeholder="1/10/2010" id="datetime" onkeydown="updateFilters(id)"/>
+                            <input type="text" placeholder="MM/DD/YYYY" id="datetime" onkeyup="updateFilters(id)"/>
                             <label for="city">Enter City</label>
-                            <input type="text" placeholder="1/10/2010" id="city" onkeydown="updateFilters(id)"/>
+                            <input type="text" placeholder="city lowercase" id="city" onkeyup="updateFilters(id)"/>
                             <label for="state">Enter State</label>
-                            <input type="text" placeholder="1/10/2010" id="state" onkeydown="updateFilters(id)"/>
+                            <input type="text" placeholder="two letter state " id="state" onkeyup="updateFilters(id)"/>
                             <label for="country">Enter Country</label>
-                            <input type="text" placeholder="1/10/2010" id="country" onkeydown="updateFilters(id)"/>
+                            <input type="text" placeholder="two letter country" id="country" onkeyup="updateFilters(id)"/>
                             <label for="shape">Enter Shape</label>
-                            <input type="text" placeholder="1/10/2010" id="shape" onkeydown="updateFilters(id)"/>
+                            <input type="text" placeholder="shape" id="shape" onkeyup="updateFilters(id)"/>
                         </li>
                         <!-- 1) In the index.html file, remove the list (<li></li>) element that creates the button. -->
                         <!-- <li class="list-group-item bg-dark">

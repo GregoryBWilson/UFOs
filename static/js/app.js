@@ -114,13 +114,14 @@ function filterTable(currentFilters){
 
   changedKey = Object.keys(currentFilters)
   console.log(`changedKey`,changedKey)
-
+  changedKey.forEach(element => console.log(element));
+  changedKey.forEach(element => {
   console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++") 
-
+    
         // Grab the key value from the filter
         let currentkey = currentFilters[changedKey];
-
-      console.log(`cuurentkey`,currentkey)
+        // let currentkey = currentFilters[element];
+      console.log(`currentkey`,currentkey)
         // let filteredData = tableData;
       
          // Check to see if a what was entered and filter the
@@ -130,6 +131,7 @@ function filterTable(currentFilters){
           // rows where the `currentkey` value matches the filter value
           filteredData = filteredData.filter(row => row[changedKey] === currentkey);
         }
+        });
       
         // Rebuild the table using the filtered data
         // @NOTE: If no data was entered, then filteredData will
