@@ -117,19 +117,19 @@ function filterTable(currentFilters){
   changedKey.forEach(element => console.log(element));
   changedKey.forEach(element => {
   console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++") 
-    
+  console.log(element)
         // Grab the key value from the filter
-        let currentkey = currentFilters[changedKey];
+        let currentkey = currentFilters[element];
         // let currentkey = currentFilters[element];
       console.log(`currentkey`,currentkey)
         // let filteredData = tableData;
       
          // Check to see if a what was entered and filter the
         // data using that key.
-        if (currentkey) {
+        if (element) {
           // Apply `filter` to the table data to only keep the
           // rows where the `currentkey` value matches the filter value
-          filteredData = filteredData.filter(row => row[changedKey] === currentkey);
+          filteredData = filteredData.filter(row => row[element] === currentkey);
         }
         });
       
