@@ -41,6 +41,44 @@ The written analysis has the following structure, organization, and formatting:
 
 ## 2 Results
 
+### 2.1 The webpage
+
+The webpage filters the table correctly based on user input. **(20 pt)**
+
+✓The webpage filters the table based on user input.
+
+![1_Initial_Load_Console_Log](\Resources\1_Initial_Load_Console_Log.png "Figure 1 - Console Log of Initial Page Load")
+
+***Figure 1 - Console Log of Initial Page Load***
+
+
+
+![2_Initial_Load_UFOs_Website](\Resources\2_Initial_Load_UFOs_Website.png "Figure 2 - Initial Load UFOs Website")
+
+***Figure 2 - Initial Load UFOs Website***
+
+
+
+![3_Console_Log_Start_Filtering](\Resources\3_Console_Log_Start_Filtering.png "Figure 3 - Console Log Start Filtering Data")
+
+***Figure 3 - Console Log Start Filtering Data***
+
+
+
+![4_UFOs_Website_Start_Filtering](\Resources\4_UFOs_Website_Start_Filtering.png "Figure 4 - UFOs Website Start Filtering")
+
+***Figure 4 - UFOs Website Start Filtering***
+
+![5_Console_Log_5_Element_Filter](\Resources\5_Console_Log_5_Element_Filter.png "Figure 5 - Console Log 5 Element Filter")
+
+***Figure 5 - Console Log 5 Element Filter***
+
+![6_Website_5_Element_Filter](\Resources\6_Website_5_Element_Filter.png "Figure 6 - Website 5 Element Filter")
+
+***Figure 6 - Website 5 Element Filter***
+
+
+
 **Results:** Describe to Dana how someone might use the new webpage by walking her through the process of using the search criteria. Use images of your webpage during the filtering process to support your explanation.
 
 ## Deliverable 1: Filter UFO sightings on multiple criteria (80 points)
@@ -120,41 +158,90 @@ The index.html file has the following:
 
 You will earn a perfect score for Deliverable 1 by completing all requirements below:
 
-### 2.1 The List Element
+### 2.2 The List Element
 
 The list element that creates the button is removed, and there are five list elements for filtering in the `index.html` file. **(20 pt)**
 
 ✓The list element for the button is removed. 
 
-✓ALL FIVE list elements for filtering are created. 
+## 
 
-### 2.2 The app.js JavaScript File
+```html
+<!-- <li class="list-group-item bg-dark">
+	<button id="filter-btn" type="button" class="btn btn-dark">Filter Table</button>
+</li> -->
+```
+
+
+
+✓ALL FIVE list elements for filtering are created.
+
+ 
+
+```html
+<li class="list-group-item  bg-dark">
+	<label for="date">Enter Date</label>
+	<input type="text" placeholder="MM/DD/YYYY" id="datetime" onkeyup="updateFilters(id)"/>
+	<label for="city">Enter City</label>
+	<input type="text" placeholder="city lowercase" id="city" onkeyup="updateFilters(id)"/>
+	<label for="state">Enter State</label>
+	<input type="text" placeholder="two letter state " id="state" onkeyup="updateFilters(id)"/>
+	<label for="country">Enter Country</label>
+	<input type="text" placeholder="two letter country" id="country" onkeyup="updateFilters(id)"/>
+	<label for="shape">Enter Shape</label>
+	<input type="text" placeholder="shape" id="shape" onkeyup="updateFilters(id)"/>
+</li>
+```
+
+
+
+### 2.3 The app.js JavaScript File
 
 The app.js file has the following: 
 
-#### 2.2.1 The Event Listener
+#### 2.3.1 The Event Listener
 
 The event listener is modified to detect changes to each filter in the `app.js` file. **(10 pt)**
 
 ✓The event listener is modified to detect changes to ALL FIVE filters. 
 
-#### 2.2.2 The `updateFilters()` Function
+```javascript
+d3.selectAll(".filter").on("change", updateFilters);
+```
+
+
+
+#### 2.3.2 The `updateFilters()` Function
 
 The `updateFilters()` function saves the element, value, and the id of the filter that was changed. **(20 pt)**
 
 ✓The updateFilters() function saves the element, value, and the id of the filter that was changed. 
 
-#### 2.2.3 The `filterTable()` Function
+
+
+```javascript
+let text1 = "#";
+let callId = text1.concat(id);
+changedElement = d3.select(callId)
+```
+
+
+
+#### 2.3.3 The `filterTable()` Function
 
 The `filterTable()` function loops through all of the filters and keeps any data that matches the filter values. **(20 pt)**
 
 ✓The filterTable() function loops through all of the filters and keeps any data that matches the filter values. 
 
-### 2.3 The webpage
+```javascript
+if (element) {
+  filteredData = filteredData.filter(row => row[element] === currentkey);
+}
+```
 
-The webpage filters the table correctly based on user input. **(20 pt)**
 
-✓The webpage filters the table based on user input.
+
+
 
 ## 3 Summary
 
@@ -182,6 +269,10 @@ The Deliverable Fulfills "Emerging" Required Criteria: AND has the following:
 
 - It is not mobile ready
 - Add key word search of the Comments section...
-- Add AND or OR search capability. Logicals in input fields
+- Add AND or OR search capability. Logical in input fields would be great
 - Add dropdowns for available choices
 - Button to clear all filters
+- A statistical search would be very good like
+  - what data had the most sightings regardless of location
+  - which city/state has the most reports
+  - grouping the list by statistics would be good for finding patterns

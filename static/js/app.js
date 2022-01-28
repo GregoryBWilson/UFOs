@@ -1,4 +1,4 @@
-console.log("=================== Script Start ===========================================");
+console.log("=================== Script Start =========================================");
 // from data.js
 const tableData = data;
 
@@ -13,7 +13,7 @@ function buildTable(currentData) {
 
   tbody.html("");
 
-    // Next, loop through each object in the data
+  // Next, loop through each object in the data
   // and append a row and cells for each value in the row
     currentData.forEach(function(dataRow){
 
@@ -28,7 +28,7 @@ function buildTable(currentData) {
     });
   });
 
-  console.log("=================== function buildTable End ===============================");
+  console.log("=================== function buildTable End ==============================");
 }
 
 // 1. Create a variable to keep track of all the filters as an object.
@@ -44,27 +44,19 @@ buildTable(tableData);
 
 // 3. Use this function to update the filters. 
 function updateFilters(id){
-  console.log("=================== function updateFilter Start ============================");
+  console.log("=================== function updateFilter Start ==========================");
 
-  console.log(`id`,id) // this is perfect
+  console.log(`id`,id)
   var changedElement = {}
+
   let text1 = "#";
-  let text2 = "";
   let callId = text1.concat(id);
-  callId = callId.concat(text2);
-  
+    
   console.log(`callId`,callId)
     
     // 4a. Save the element that was changed as a variable.
-    //let date = d3.select("#datetime").property("value");
-    // changedElement = d3.select(callId);
-  // if(callId==="state"){
-  //   changedElement = d3.select(callId);
-  // }
-  // if(callId==="datetime"){
-  //   changedElement = d3.select("datetime");
-  // }
-    changedElement = d3.select(callId) //This is just selecting id = datetime!!!
+
+    changedElement = d3.select(callId)
 
     console.log(`var changedElement`,changedElement)
 
@@ -102,7 +94,7 @@ function updateFilters(id){
 // 7. Use this function to filter the table when data is entered.
 function filterTable(currentFilters){
 
-  console.log("=================== function filterTable Start ============================");
+  console.log("=================== function filterTable Start ==========================");
 
     console.log(`currentFilters`,currentFilters)
 
@@ -113,22 +105,30 @@ function filterTable(currentFilters){
     // matches the filter values
 
   changedKey = Object.keys(currentFilters)
+
   console.log(`changedKey`,changedKey)
+
   changedKey.forEach(element => console.log(element));
+
   changedKey.forEach(element => {
-  console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++") 
+
+  console.log("+++++++++++++++++ Enter Loop To Filter Data +++++++++++++") 
+
   console.log(element)
+
         // Grab the key value from the filter
         let currentkey = currentFilters[element];
-        // let currentkey = currentFilters[element];
-      console.log(`currentkey`,currentkey)
+
+        console.log(`currentkey`,currentkey)
+
         // let filteredData = tableData;
       
-         // Check to see if a what was entered and filter the
+        // Check to see if a what was entered and filter the
         // data using that key.
+        // Apply `filter` to the table data to only keep the
+        // rows where the `currentkey` value matches the filter value
+
         if (element) {
-          // Apply `filter` to the table data to only keep the
-          // rows where the `currentkey` value matches the filter value
           filteredData = filteredData.filter(row => row[element] === currentkey);
         }
         });
@@ -138,7 +138,7 @@ function filterTable(currentFilters){
         // just be the original tableData.
         
 
-  console.log("+++++++++++++++++ New Loop Test Start ++++++++++++++")      
+  console.log("+++++++++++++++++ Exit Loop To Filter Data ++++++++++++++")      
 
     
     // // 10. Finally, rebuild the table using the filtered data
@@ -147,5 +147,6 @@ function filterTable(currentFilters){
 
     buildTable(filteredData);
   
-  console.log("=================== function filterTable End ==============================");
+  console.log("=================== function filterTable End =============================");
 }
+console.log("=================== Script End ===========================================");
