@@ -1,51 +1,22 @@
-# Filter UFO Sightings on Multiple Criteria
+# UFO Sightings Filtered on Multiple Criteria
 
 ## 1 Overview of Project
 
-**Overview of Project:** Explain the purpose of this analysis.
-
-**8 to >7.0 pts**
-
-Demonstrating Proficiency
-
-The written analysis has ALL of the following: 
-
-✓There is a title, and there are multiple paragraphs. 
-
-✓Each paragraph has a heading. 
-
-✓There are subheadings. 
-
-✓Images are correct and displayed where appropriate.
-
-### Deliverable 2 Instructions
-
-For your written analysis, be sure to use complete and coherent sentences. Your written analysis should contain three sections, which cover the following:
-
-1. 
-2. 
-3. 
-
-### Deliverable 2 Requirements
-
-#### Structure, Organization, and Formatting (8 points)
-
-The written analysis has the following structure, organization, and formatting:
-
-- There is a title, and there are multiple paragraphs. **(2 pt)**
-- Each paragraph has a heading. **(2 pt)**
-- There are subheadings to break up text. **(2 pt)**
-- Images are formatted and displayed where appropriate. **(2 pt)**
-
-
+Dana a data journalist, a job which involves writing articles based on the findings from data.   She is at a point in her career where she has the freedom to pick and choose what she wants to write about and she now has an opportunity to write about her home town McMinnville, Oregon and in particular UFO sightings.  Data has access to a large file of UFO data, contained in the file data.js, and she want to create a website that will be displayed online to allow users to filter for multiple criteria at the same time. She has the code working for a single criteria, date, but she wants to add additional table filters for the city, state, country, and shape.
 
 ## 2 Results
 
+To help Dana get a good understanding of how the website works I have done one very important thing: ***I have added numerous console.log statements to the code*** . These written statements to the console can be accessed by right clicking anywhere on the website and selecting "inspect".  At the top of the  browser screen that opens select Console and you will be able to see all the information that I felt would be of value in help you understand how the website works.  You should also know that during the development of the JavaScript file, app.js, I used the console.log commend extensively to debug the original code.  The following sections will explain, used both the console and website outputs, how the code is structure and how to use the website.
+
+Here is what can can found in section 2:
+
+- Section 2.1 describes how the website works
+- Section 2.2 describes how the list elements have been changed to accommodate the search requirements
+- Section 2.3 describes the interworking of the JavaScript that drive the dynamic parts for the website searches
+
 ### 2.1 The webpage
 
-The webpage filters the table correctly based on user input. **(20 pt)**
-
-✓The webpage filters the table based on user input.
+When you first access the website a variable, "filters" is defined that will continue through your session to capture filter information of your choosing.  In figure 1 below you can see that the app.js file starts, creates a the variable "filters" (which at start is empty {}) and the builds a table view of the data.
 
 ![1_Initial_Load_Console_Log](\Resources\1_Initial_Load_Console_Log.png "Figure 1 - Console Log of Initial Page Load")
 
@@ -53,23 +24,41 @@ The webpage filters the table correctly based on user input. **(20 pt)**
 
 
 
+Figure 2 below shows the initial state of the website before any filter data has been applied.  Also notice that the default information in the input fields has been set to help the user understand what the format of the input should look like.
+
 ![2_Initial_Load_UFOs_Website](\Resources\2_Initial_Load_UFOs_Website.png "Figure 2 - Initial Load UFOs Website")
 
 ***Figure 2 - Initial Load UFOs Website***
 
-
+The inputs can be selected in any order the the user would like.  You can see in the console view of figure 3 below that as soon as the user begins to type the application is listeing and a call is made to the updateFilters function.  
 
 ![3_Console_Log_Start_Filtering](\Resources\3_Console_Log_Start_Filtering.png "Figure 3 - Console Log Start Filtering Data")
 
 ***Figure 3 - Console Log Start Filtering Data***
 
+Since the first key to be changed was 'country' and the user input is not yet complete no rows are shown in figure 4a.
+
+![4_UFOs_Website_Start_Filtering](\Resources\4a_UFOs_Website_Start_Filtering.png "Figure 4a - UFOs Website Start Filtering")
+
+***Figure 4a - UFOs Website Start Filtering***
+
+When the user types the next character "s" that then matches the code for the United States all the data for "us" records are displayed.
+
+![4b_UFOs_Website_Filter_Country](\Resources\4b_UFOs_Website_Filter_Country.png "Figure 4b - UFOs Website Filter Country")
+
+***Figure 4b - UFOs Website Filter Country***
 
 
-![4_UFOs_Website_Start_Filtering](\Resources\4_UFOs_Website_Start_Filtering.png "Figure 4 - UFOs Website Start Filtering")
 
-***Figure 4 - UFOs Website Start Filtering***
+Continuing to refine the search the user then adds criteria in any order they like, continuing to refine and target the resulting data that is displayed.  I the case in figure 5 below you can see, by looking at the console log for "filters" that the user selected "filters {country: 'us', state: 'ca', city: 'el cajon', datetime: '1/1/2010', shape: 'triangle'}"
+
+
 
 ![5_Console_Log_5_Element_Filter](\Resources\5_Console_Log_5_Element_Filter.png "Figure 5 - Console Log 5 Element Filter")
+
+
+
+The result of this search can be seen in figure 5 below, with only two observation - which seem to support each other.
 
 ***Figure 5 - Console Log 5 Element Filter***
 
@@ -79,92 +68,9 @@ The webpage filters the table correctly based on user input. **(20 pt)**
 
 
 
-**Results:** Describe to Dana how someone might use the new webpage by walking her through the process of using the search criteria. Use images of your webpage during the filtering process to support your explanation.
-
-## Deliverable 1: Filter UFO sightings on multiple criteria (80 points)
-
-### Deliverable 1 Instructions
-
-Using JavaScript and HTML, you’ll modify the code in your `index.html` file to create more table filters. In addition to the date filter you created in this module, you’ll add filters for the city, state, country, and shape, as shown in the following image:
-
-Follow the instructions below and the numbered comments in the starter code to complete Deliverable 1.
-
-1. Download the `ufo_starterCode.js`, rename it `app.js`, and place it in the js folder of your UFOs GitHub repository. The starter code includes the code used to populate the table from this module.
-
-**NOTE**
-
-Before you rename the `ufo_starterCode.js` file, we suggest that you rename the `app.js` you created in this module as `app_1.js` or something similar to avoid using the wrong file for the Challenge.
-
-1. In the `index.html` file, remove the list (`<li></li>`) element that creates the button.
-
-2. Create four more list elements: city, state, country, and shape. These will be similar to the "Enter Date" list element. Each element should have the same "id" as the object properties in the `data.js` file.
-
-3. In Step 1 of the `app.js` file, create an empty `filters` variable to keep track of all the elements that change when a search is entered. This variable will be used in Step 5 to store the property “id” and the value that was entered from user input.
-
-4. Next, you will need to write code for two functions whose names we’ve provided in the starter code,
-
-    
-
-   ```
-   
-   ```
-
-    
-
-   and
-
-    
-
-   ```
-   filterTable()
-   ```
-
-   .
-
-   - The `updateFilters()` function will replace your `handleClick()` function and update the `filters` variable you created in Step 1.
-   - ***<u>The `filterTable()` function will filter the table data by the value that is entered for the "id" that has changed.</u>***
-
-5. For Step 2, located before the `buildTable(tableData)` function at the end of the starter code, modify the event listener from this module so that it detects a "change" on each input element and calls the `updateFilters()` function.
-
-6. In Step 3, we’ve provided the function, `updateFilters()`. Inside this function, you’ll write code in Steps 4-5 to update the filters based on user input.
-
-7. In Step 4a, create a variable that saves the element that was changed using `d3.select(this)`.
-
-8. In Step 4b, create a variable that saves the value of the changed element’s property.
-
-9. In Step 4c, create a variable that saves the attribute of the changed element’s id.
-
-10. In Step 5, write an `if-else` statement that checks if a value was changed by the user (variable from Step 4b). If a value was changed, add the element’s id (variable from Step 4c) as the property and the value that was changed to the `filters` variable you created in Step 1. If a value was not entered, then clear the element id from the `filters` variable.
-
-**80 to >72.0 pts**
-
-Demonstrating Proficiency
-
-The index.html file has the following: 
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Deliverable 1 Requirements
-
-You will earn a perfect score for Deliverable 1 by completing all requirements below:
-
 ### 2.2 The List Element
 
-The list element that creates the button is removed, and there are five list elements for filtering in the `index.html` file. **(20 pt)**
-
-✓The list element for the button is removed. 
-
-## 
+The original website index.html had a button that was waiting for a click event, see section on the app.py for more details on the listener.
 
 ```html
 <!-- <li class="list-group-item bg-dark">
@@ -172,11 +78,7 @@ The list element that creates the button is removed, and there are five list ele
 </li> -->
 ```
 
-
-
-✓ALL FIVE list elements for filtering are created.
-
- 
+The new website now has five input fields the pass the "id" to the function "updateFilters" on a key up event.  It should be noted at this time that the onkeyup event is superior to the onkeydown event  because key down would require one more key stroke, such as a return of tab, after the user have entered their information. The listener in app.js is looking for the change event and is able to capture the input value of that id to update the filters. 
 
 ```html
 <li class="list-group-item  bg-dark">
@@ -197,13 +99,21 @@ The list element that creates the button is removed, and there are five list ele
 
 ### 2.3 The app.js JavaScript File
 
-The app.js file has the following: 
+The app.js file has the following dynamic components the interact with the website:
+
+- an event listener
+- a function to update the filters that the user has entered
+- a function to extract only the records that are of interest to the user
 
 #### 2.3.1 The Event Listener
 
-The event listener is modified to detect changes to each filter in the `app.js` file. **(10 pt)**
+The event listener is modified to detect changes to each filter in the `app.js` file, the first listener was looking for a click event
 
-✓The event listener is modified to detect changes to ALL FIVE filters. 
+```javascript
+d3.selectAll("#filter-btn").on("click", handleClick);
+```
+
+The second listener was looking for a change, and the change was defined by the onkeyup in the index.html file.
 
 ```javascript
 d3.selectAll(".filter").on("change", updateFilters);
@@ -213,11 +123,7 @@ d3.selectAll(".filter").on("change", updateFilters);
 
 #### 2.3.2 The `updateFilters()` Function
 
-The `updateFilters()` function saves the element, value, and the id of the filter that was changed. **(20 pt)**
-
-✓The updateFilters() function saves the element, value, and the id of the filter that was changed. 
-
-
+The "id" that is returned to the updateFilters function is save and used to complete the select statement that reads the value that was entered by the user and creates the "currentFilters".
 
 ```javascript
 let text1 = "#";
@@ -229,9 +135,7 @@ changedElement = d3.select(callId)
 
 #### 2.3.3 The `filterTable()` Function
 
-The `filterTable()` function loops through all of the filters and keeps any data that matches the filter values. **(20 pt)**
-
-✓The filterTable() function loops through all of the filters and keeps any data that matches the filter values. 
+Passing the currentFilters to the filterTable function the original tableData is then filtered for display on the website.
 
 ```javascript
 if (element) {
@@ -241,25 +145,22 @@ if (element) {
 
 
 
-
-
 ## 3 Summary
 
-**Summary:** In a summary statement, describe one drawback of this new design and two recommendations for further development.
-
-**12 to >10.0 pts**
-
-Demonstrating Proficiency
-
-The Deliverable Fulfills "Emerging" Required Criteria: AND has the following: 
+In a summary statement, describe one drawback of this new design and two recommendations for further development.
 
 ### 3.1 Drawback of the Design
 
 ✓The summary addresses a drawback of the design. 
 
+U should pull up US etc not a black screen
 
-
-
+| Code   | Country        |
+| :----- | :------------- |
+| **UA** | **Ukraine**    |
+| UK     | United Kingdom |
+| US     | United States  |
+| UZ     | Uzbekistan     |
 
 
 
