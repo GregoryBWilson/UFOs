@@ -68,7 +68,7 @@ Continuing to refine the search the user then adds criteria in any order they li
 
 The result of this search can be seen in figure 7 below, with only two observation - which seem to support each other.
 
-![6_Website_5_Element_Filter](Resources/6_Website_5_Element_Filter.png "Figure 6 - Website 5 Element Filter")
+![6_Website_5_Element_Filter](Resources/6_Website_5_Element_Filter.png "Figure 7 - Website 5 Element Filter")
 
 ***Figure 7 - Website 5 Element Filter***
 
@@ -170,7 +170,7 @@ One thing I see that may be a better design would be to change the match criteri
 
 Another drawback of the design is that it is not mobile ready, as can be seen in the iPhone 12 Pro view of the website in figure 8 below.  The table of data, is great, but the other elements do not scale well at all.
 
-![7_Website_Not_Mobile_Ready](Resources/7_Website_Not_Mobile_Ready.png "Figure 7 - Website Not Mobile Ready")
+![7_Website_Not_Mobile_Ready](Resources/7_Website_Not_Mobile_Ready.png "Figure 8 - Website Not Mobile Ready")
 
 ***Figure 8 - Website Not Mobile Ready***
 
