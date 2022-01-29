@@ -4,7 +4,7 @@
 
 Dana is a data journalist, a job which involves writing articles based on the findings from data analysis.   She is at a point in her career where she has the freedom to pick and choose what she wants to write about and she now has an opportunity to write about her home town McMinnville, Oregon and in particular UFO sightings.  In May of 1950, a farming couple, Paul and Evelyn Trent took a number of photographs of a UFO sighting the were published in Life magazine.  The image shown in figure 1 below was taken from https://en.wikipedia.org/wiki/McMinnville_UFO_photographs and has been embedded here for your convenience.
 
-![400px-Trent1_600dpi](Resources\400px-Trent1_600dpi.jpg "Figure 1 - McMinnville UFO Photograph")
+![400px-Trent1_600dpi](Resources/400px-Trent1_600dpi.jpg "Figure 1 - McMinnville UFO Photograph")
 
 ***Figure 1 - McMinnville UFO Photograph***
 
@@ -24,7 +24,7 @@ Here is what can can found in section 2:
 
 When you first access the website a variable, "filters" is defined that will continue throughout your session to capture filter information of your choosing.  In figure 2 below you can see that the app.js file starts, creates a the variable "filters" (which at start is empty {}) and then builds a table view of the data.
 
-![1_Initial_Load_Console_Log](\Resources\1_Initial_Load_Console_Log.png "Figure 2 - Console Log of Initial Page Load")
+![1_Initial_Load_Console_Log](Resources/1_Initial_Load_Console_Log.png "Figure 2 - Console Log of Initial Page Load")
 
 ***Figure 2 - Console Log of Initial Page Load***
 
@@ -32,25 +32,25 @@ When you first access the website a variable, "filters" is defined that will con
 
 Figure 3 below shows the initial state of the website before any filter data has been applied.  Also notice that the default information in the input fields has been set to help the user understand what the format of the input should look like.
 
-![2_Initial_Load_UFOs_Website](\Resources\2_Initial_Load_UFOs_Website.png "Figure 3 - Initial Load UFOs Website")
+![2_Initial_Load_UFOs_Website](Resources/2_Initial_Load_UFOs_Website.png "Figure 3 - Initial Load UFOs Website")
 
 ***Figure 3 - Initial Load UFOs Website***
 
 The inputs can be selected in any order the the user would like.  You can see in the console view of figure 4 below that as soon as the user begins to type the application is listening and a call is made to the updateFilters function.  
 
-![3_Console_Log_Start_Filtering](\Resources\3_Console_Log_Start_Filtering.png "Figure 4 - Console Log Start Filtering Data")
+![3_Console_Log_Start_Filtering](Resources/3_Console_Log_Start_Filtering.png "Figure 4 - Console Log Start Filtering Data")
 
 ***Figure 4 - Console Log Start Filtering Data***
 
 Since the first key to be changed was 'country' and the user input is not yet complete no rows are shown in figure 5a.
 
-![4_UFOs_Website_Start_Filtering](\Resources\4a_UFOs_Website_Start_Filtering.png "Figure 5a - UFOs Website Start Filtering")
+![4_UFOs_Website_Start_Filtering](Resources/4a_UFOs_Website_Start_Filtering.png "Figure 5a - UFOs Website Start Filtering")
 
 ***Figure 5a - UFOs Website Start Filtering***
 
 When the user types the next character "s" the search then matches the code for the United States and all the data for "us" records are displayed.
 
-![4b_UFOs_Website_Filter_Country](\Resources\4b_UFOs_Website_Filter_Country.png "Figure 5b - UFOs Website Filter Country")
+![4b_UFOs_Website_Filter_Country](Resources/4b_UFOs_Website_Filter_Country.png "Figure 5b - UFOs Website Filter Country")
 
 ***Figure 5b - UFOs Website Filter Country***
 
@@ -60,7 +60,7 @@ Continuing to refine the search the user then adds criteria in any order they li
 
 
 
-![5_Console_Log_5_Element_Filter](\Resources\5_Console_Log_5_Element_Filter.png "Figure 6 - Console Log 5 Element Filter")
+![5_Console_Log_5_Element_Filter](Resources/5_Console_Log_5_Element_Filter.png "Figure 6 - Console Log 5 Element Filter")
 
 ***Figure 6 - Console Log 5 Element Filter***
 
@@ -68,7 +68,7 @@ Continuing to refine the search the user then adds criteria in any order they li
 
 The result of this search can be seen in figure 7 below, with only two observation - which seem to support each other.
 
-![6_Website_5_Element_Filter](Resources\6_Website_5_Element_Filter.png "Figure 6 - Website 5 Element Filter")
+![6_Website_5_Element_Filter](Resources/6_Website_5_Element_Filter.png "Figure 6 - Website 5 Element Filter")
 
 ***Figure 7 - Website 5 Element Filter***
 
@@ -170,7 +170,7 @@ One thing I see that may be a better design would be to change the match criteri
 
 Another drawback of the design is that it is not mobile ready, as can be seen in the iPhone 12 Pro view of the website in figure 8 below.  The table of data, is great, but the other elements do not scale well at all.
 
-![7_Website_Not_Mobile_Ready](Resources\7_Website_Not_Mobile_Ready.png "Figure 7 - Website Not Mobile Ready")
+![7_Website_Not_Mobile_Ready](Resources/7_Website_Not_Mobile_Ready.png "Figure 7 - Website Not Mobile Ready")
 
 ***Figure 8 - Website Not Mobile Ready***
 
