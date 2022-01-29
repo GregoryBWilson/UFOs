@@ -8,13 +8,13 @@ Dana is a data journalist, a job which involves writing articles based on the fi
 
 ***Figure 1 - McMinnville UFO Photograph***
 
-Data has access to a large file of UFO data, contained in the file data.js, and she wants to create a website that will be displayed online to allow users to filter for multiple criteria at the same time. She has the code working for a single criteria, date, but she wants to add additional table filters for the city, state, country, and shape.
+Dana has access to a large file of UFO data, contained in the file data.js, and she wants to create a website that will be displayed online to allow users to filter for multiple criteria at the same time. She has the code working for a single criteria, date, but she wants to add additional table filters for the city, state, country, and shape.
 
 ## 2 Results
 
-To help Dana get a good understanding of how the website works I have done one very important thing: ***I have added numerous console.log statements to the code*** . These written statements to the console can be accessed by right clicking anywhere on the website and selecting "inspect".  At the top of the  browser screen that opens select "Console" and you will be able to see all the information that I felt would be of value to help you understand how the website works.  You should also know that during the development of the JavaScript file, app.js, I used the console.log command extensively to debug the original code.  The following sections will explain, using both the console and website outputs, how the code is structured and how to use the website.
+To help Dana get a good understanding of how the website works I have done one very important thing: ***I have added numerous console.log statements to the code*** . These written statements to the console can be accessed by right clicking anywhere on the website and selecting "inspect".  At the top of the  browser screen that opens select "Console" and you will be able to see all of the information that I felt would be of value to help you understand how the website works.  You should also know, that during the development of the JavaScript file, app.js, I used the console.log command extensively to debug the original code.  The following sections will explain, using both the console and website outputs, how the code is structured and how to use the website.
 
-Here is what can can found in section 2:
+Here is what can be found in section 2:
 
 - Section 2.1 describes how the website works
 - Section 2.2 describes how the list elements have been changed to accommodate the search requirements
@@ -22,7 +22,7 @@ Here is what can can found in section 2:
 
 ### 2.1 The webpage
 
-When you first access the website a variable, "filters" is defined that will continue throughout your session to capture filter information of your choosing.  In figure 2 below you can see that the app.js file starts, creates a the variable "filters" (which at start is empty {}) and then builds a table view of the data.
+When you first access the website a variable, "filters" is defined that will continue throughout your session to capture filter information of your choosing.  In figure 2 below you can see that the app.js file starts, creates a variable "filters" (which at the start is empty {}) and then builds a table view of the data.
 
 ![1_Initial_Load_Console_Log](Resources/1_Initial_Load_Console_Log.png "Figure 2 - Console Log of Initial Page Load")
 
@@ -36,7 +36,7 @@ Figure 3 below shows the initial state of the website before any filter data has
 
 ***Figure 3 - Initial Load UFOs Website***
 
-The inputs can be selected in any order the the user would like.  You can see in the console view of figure 4 below that as soon as the user begins to type the application is listening and a call is made to the updateFilters function.  
+The inputs can be selected in any order the user would like.  You can see in the console view of figure 4 below that as soon as the user begins to type, the application is listening and a call is made to the updateFilters function.  
 
 ![3_Console_Log_Start_Filtering](Resources/3_Console_Log_Start_Filtering.png "Figure 4 - Console Log Start Filtering Data")
 
@@ -66,7 +66,7 @@ Continuing to refine the search the user then adds criteria in any order they li
 
 
 
-The result of this search can be seen in figure 7 below, with only two observation - which seem to support each other.
+The result of this search can be seen in figure 7 below, with only two observations - which seem to support each other.
 
 ![6_Website_5_Element_Filter](Resources/6_Website_5_Element_Filter.png "Figure 7 - Website 5 Element Filter")
 
@@ -84,7 +84,7 @@ The original website index.html had a button that was waiting for a click event,
 </li> -->
 ```
 
-The new website now has five input fields that pass the "id" to the function "updateFilters" on a key up event.  It should be noted at this time that the onkeyup event is superior to the onkeydown event  because key down would require one additional user key stroke, such as a return of tab, after the user have entered their information. The listener in app.js is looking for the change event and is able to capture the input value of that id to update the filters. 
+The new website now has five input fields that pass the "id" to the function "updateFilters" on a key up event.  It should be noted at this time that the onkeyup event is superior to the onkeydown event  because key down would require one additional user key stroke, such as a return or tab, after the user has entered their information. The listener in app.js is looking for the change event and is able to capture the input value of that id to update the filters. 
 
 ```html
 <li class="list-group-item  bg-dark">
@@ -153,11 +153,11 @@ if (element) {
 
 ## 3 Summary
 
-The website as designed works very well as does address Dana's specified requirements however, in section 3.1 and 3.2 we will discuss shortcomings of the current design as well as other recommendations for how it can be improved to enrich the user experience and the utility of its analysis capabilities.  The data set that was available for analysis, well not insignificant, was not very big - as the size of the data set increases the value of a refined search and analysis capabilities would become much more obvious.  Hopefully Dana with see this value and let us help her with this work.
+The website as designed works very well, and it does address Dana's specified requirements, however, in section 3.1 and 3.2 we will discuss shortcomings of the current design as well as other recommendations for how it can be improved.  These changes will enrich the user experience and the utility of its analysis capabilities.  The data set that was available for analysis, well not insignificant, was not very big - as the size of the data set increases the value of a refined search and analysis capabilities would become much more obvious.  Hopefully Dana with see this value and let us help her with this work.
 
 ### 3.1 Drawback of the Design
 
-One thing I see that may be a better design would be to change the match criteria so that the screen is never empty.  For example typing a "u" could pull up not only "us" but also onther countries like those shown in the example in table 1 below.  This was particularly annoying as I was search for the city of  "el cajon", I had to copy it from the screen because I couldn't remember how to spell it.  Case sensitivity is also an issue, "us" and "US" should achieve the same search result.
+One thing I see that may be a better design, would be to change the match criteria so that the screen is never empty.  For example typing a "u" could pull up not only "us" but also other countries like those shown in the example in table 1 below.  This was particularly annoying as I was searching for the city of  "el cajon", I had to copy it from the screen because I couldn't remember how to spell it.  Case sensitivity is also an issue, "us" and "US" should achieve the same search result.
 
 | Code   | Country        |
 | :----- | :------------- |
@@ -168,7 +168,7 @@ One thing I see that may be a better design would be to change the match criteri
 
 ***Table 1 - Example of Continuous Search Criteria***
 
-Another drawback of the design is that it is not mobile ready, as can be seen in the iPhone 12 Pro view of the website in figure 8 below.  The table of data, is great, but the other elements do not scale well at all.
+Another drawback of the design is that it is not mobile ready, as can be seen in the iPhone 12 Pro view of the website in figure 8 below.  The table of data is great, but the other elements do not scale well at all.
 
 ![7_Website_Not_Mobile_Ready](Resources/7_Website_Not_Mobile_Ready.png "Figure 8 - Website Not Mobile Ready")
 
@@ -180,15 +180,15 @@ Aside from the more obvious problems with the usability of the website, here are
 
 #### Key Word Search of Comments:
 
-The comments sections is rich with information that has not been extracted into any of the other elements.  Adding the ability to openly search the comments section for whatever the user was interested into would be very valuable.  For example the colour green is shown in the first row - it would be nice to be able to search for the word "green" to see if their are other comments that include that word.
+The comments section is rich with information that has not been extracted into any of the other elements.  Adding the ability to openly search the comments section for whatever the user was interested in would be very valuable.  For example the colour green is shown in the first row - it would be nice to be able to search for the word "green" to see if their are other comments that include that word.
 
 #### Logical OR Search Capability to Criteria:
 
-Currently the website facilitates a logical AND between the various input fields.  It would be very useful to be able to search a logical OR criteria within an input field.  The user you could then, for example, search cities that are know to be close to each other to find out if there were reported cases that affected a wider area than just one city.
+Currently the website facilitates a logical AND between the various input fields.  It would be very useful to be able to search a logical OR criteria within an input field.  The user could then, for example, search cities that are known to be close to each other to find out if there were reported cases that affected a wider area than just one city.
 
 #### Dropdowns for Input Entry:
 
-If it is not visible in the first few lines than the user really doesn't know what selections are available for use.  For example what are all the choices for shape that can be used or how many countries are there in the available data.
+If it is not visible in the first few lines then the user really doesn't know what selections are available for use.  For example what are all the choices for shape that can be used or how many countries are there in the available data.
 
 #### Statistical Search Capability:
 
